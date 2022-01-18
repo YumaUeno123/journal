@@ -9,10 +9,10 @@ export const Layout: FC = ({ children }) => {
     <Box sx={{ display: 'flex' }}>
       <Header />
       <Sidebar />
-      <main>
+      <Box component="main" sx={{ width: '100%' }}>
         <Toolbar sx={{ height: '48px' }} />
         {children}
-      </main>
+      </Box>
     </Box>
   );
 };
