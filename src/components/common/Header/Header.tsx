@@ -9,6 +9,7 @@ import { Menu, MenuItem } from './Menu';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import HelpIcon from '@mui/icons-material/Help';
 import { theme } from '@/styles/theme';
+import { useRouter } from 'next/router';
 
 const userMenuItems: MenuItem[] = [
   {
@@ -41,6 +42,8 @@ const helpIconMenuItems: MenuItem[] = [
 ];
 
 export const Header = () => {
+  const router = useRouter();
+
   return (
     <AppBar
       position="fixed"
@@ -54,7 +57,8 @@ export const Header = () => {
           variant="h6"
           noWrap
           component="div"
-          sx={{ display: { xs: 'none', sm: 'block', color: theme.palette.text.primary } }}
+          sx={{ color: theme.palette.text.primary, cursor: 'pointer' }}
+          onClick={() => router.push('/')}
         >
           Sample Product
         </Typography>

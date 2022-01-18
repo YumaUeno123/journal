@@ -10,6 +10,7 @@ import AssignmentReturnedIcon from '@mui/icons-material/AssignmentReturned';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import { ReactNode } from 'react';
 import { theme } from '@/styles/theme';
+import { useRouter } from 'next/router';
 
 const drawerWidth = 130;
 
@@ -19,31 +20,33 @@ type SidebarItem = {
   onClick: () => void;
 };
 
-const sidebarItems: SidebarItem[] = [
-  {
-    name: '仕訳登録',
-    icon: <AssignmentIcon />,
-    onClick: () => {
-      console.log('clicked 仕訳登録');
-    },
-  },
-  {
-    name: '仕訳申請',
-    icon: <AssignmentReturnedIcon />,
-    onClick: () => {
-      console.log('clicked 仕訳申請');
-    },
-  },
-  {
-    name: '仕訳承認',
-    icon: <AssignmentTurnedInIcon />,
-    onClick: () => {
-      console.log('clicked 仕訳承認');
-    },
-  },
-];
-
 export const Sidebar = () => {
+  const router = useRouter();
+
+  const sidebarItems: SidebarItem[] = [
+    {
+      name: '仕訳登録',
+      icon: <AssignmentIcon />,
+      onClick: () => {
+        router.push('/old-journal');
+      },
+    },
+    {
+      name: '仕訳申請',
+      icon: <AssignmentReturnedIcon />,
+      onClick: () => {
+        router.push('/applicant');
+      },
+    },
+    {
+      name: '仕訳承認',
+      icon: <AssignmentTurnedInIcon />,
+      onClick: () => {
+        router.push('/approver');
+      },
+    },
+  ];
+
   return (
     <Drawer
       variant="permanent"
