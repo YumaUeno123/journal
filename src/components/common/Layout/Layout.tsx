@@ -10,7 +10,7 @@ export const Layout: FC = ({ children }) => {
       <Header />
       <Sidebar />
       <main>
-        <Toolbar />
+        <Toolbar sx={{ height: '48px' }} />
         {children}
       </main>
     </Box>

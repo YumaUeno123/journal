@@ -56,8 +56,14 @@ export const Sidebar = () => {
         [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
       }}
     >
-      <Toolbar />
-      <Box sx={{ overflow: 'auto', height: '100%', backgroundColor: theme.palette.primary.dark }}>
+      <Toolbar sx={{ height: '48px' }} />
+      <Box
+        sx={{
+          overflow: 'auto',
+          height: 'calc(100vh - 48px)',
+          backgroundColor: theme.palette.primary.dark,
+        }}
+      >
         <List
           sx={{
             paddingTop: 0,
