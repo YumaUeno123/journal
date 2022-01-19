@@ -1,4 +1,5 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
+import { RouterContext } from 'next/dist/shared/lib/router-context'; // next 12
 import { theme } from '../src/styles/theme';
 
 export const parameters = {
@@ -8,6 +9,9 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  nextRouter: {
+    Provider: RouterContext.Provider,
   },
 };
 
