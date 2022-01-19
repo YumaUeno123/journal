@@ -5,9 +5,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
-import AssignmentIcon from '@mui/icons-material/Assignment';
-import AssignmentReturnedIcon from '@mui/icons-material/AssignmentReturned';
-import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
+import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
+import AssignmentReturnedOutlinedIcon from '@mui/icons-material/AssignmentReturnedOutlined';
+import AssignmentTurnedInOutlinedIcon from '@mui/icons-material/AssignmentTurnedInOutlined';
 import { ReactNode } from 'react';
 import { theme } from '@/styles/theme';
 import { useRouter } from 'next/router';
@@ -26,21 +26,21 @@ export const Sidebar = () => {
   const sidebarItems: SidebarItem[] = [
     {
       name: '仕訳登録',
-      icon: <AssignmentIcon />,
+      icon: <AssignmentOutlinedIcon />,
       onClick: () => {
         router.push('/old-journal');
       },
     },
     {
       name: '仕訳申請',
-      icon: <AssignmentReturnedIcon />,
+      icon: <AssignmentReturnedOutlinedIcon />,
       onClick: () => {
         router.push('/applicant');
       },
     },
     {
       name: '仕訳承認',
-      icon: <AssignmentTurnedInIcon />,
+      icon: <AssignmentTurnedInOutlinedIcon />,
       onClick: () => {
         router.push('/approver');
       },
